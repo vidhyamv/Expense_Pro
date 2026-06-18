@@ -17,7 +17,7 @@ const initialState: ExpenseState = {
 // Safely determine API URL based on where the frontend is running
 const isProduction = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
 const API_URL = isProduction 
-  ? 'https://expense-pro-backend.onrender.com/api/expenses/' 
+  ? 'https://expense-pro-y7rn.onrender.com/api/expenses/' 
   : 'http://localhost:8000/api/expenses/';
 
 // Fetch expenses from backend
