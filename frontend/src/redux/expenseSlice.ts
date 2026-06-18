@@ -14,7 +14,7 @@ const initialState: ExpenseState = {
   error: null,
 };
 
-const API_URL = 'http://localhost:8000/api/expenses/';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/expenses/';
 
 // Fetch expenses from backend
 export const fetchExpenses = createAsyncThunk('expenses/fetchExpenses', async () => {
