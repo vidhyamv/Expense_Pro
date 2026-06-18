@@ -14,7 +14,11 @@ const initialState: ExpenseState = {
   error: null,
 };
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/expenses/';
+// Safely determine API URL based on where the frontend is running
+const isProduction = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
+const API_URL = isProduction 
+  ? 'https://expense-pro-backend.onrender.com/api/expenses/' 
+  : 'http://localhost:8000/api/expenses/';
 
 // Fetch expenses from backend
 export const fetchExpenses = createAsyncThunk('expenses/fetchExpenses', async () => {
