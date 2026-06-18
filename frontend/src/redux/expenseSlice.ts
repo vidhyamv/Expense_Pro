@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Expense } from '../types/types';
 
@@ -19,10 +19,10 @@ const API_URL = 'http://localhost:8000/api/expenses/';
 // Fetch expenses from backend
 export const fetchExpenses = createAsyncThunk('expenses/fetchExpenses', async () => {
   const response = await axios.get(API_URL);
-  
+
   // Handle paginated response ({count, results: []}) or direct array
   const dataList = response.data.results ? response.data.results : response.data;
-  
+
   return dataList.map((item: any) => ({
     id: item.id.toString(),
     category: item.category_detail ? item.category_detail.name : 'Other',

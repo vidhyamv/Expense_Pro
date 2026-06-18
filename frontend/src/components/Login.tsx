@@ -166,12 +166,16 @@ const Login: React.FC = () => {
           <p className="text-sm text-gray-600">Password: <span className="font-mono">demo123</span></p>
         </div>
 
-        {/* Footer */}
+        {/* Footer - FIXED */}
         <p className="text-center text-sm text-gray-600 mt-6">
           Don't have an account?{' '}
-          <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
+          <button
+            type="button"
+            onClick={() => alert('Sign up page coming soon!')}
+            className="text-blue-600 hover:text-blue-700 font-medium bg-none border-none cursor-pointer p-0"
+          >
             Sign up
-          </a>
+          </button>
         </p>
       </div>
     </div>
